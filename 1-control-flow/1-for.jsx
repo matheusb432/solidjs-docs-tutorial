@@ -15,9 +15,7 @@ function App() {
         {(cat, index) => {
           return (
             <li>
-              <a
-                target="_blank"
-                href={`https://www.youtube.com/watch?v=${cat.id}`}>
+              <a target="_blank" href={`https://www.youtube.com/watch?v=${cat.id}`}>
                 {/* NOTE  the index is a signal.  */}
                 {index() + 1}: {cat.name}
               </a>

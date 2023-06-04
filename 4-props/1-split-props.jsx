@@ -19,8 +19,7 @@ function App() {
   return (
     <>
       <Greeting greeting="Yo" name={name()} style="color: teal;" />
-      <button
-        onClick={() => setName((n) => (n === 'Jakob' ? 'Jarod' : 'Jakob'))}>
+      <button onClick={() => setName((n) => (n === 'Jakob' ? 'Jarod' : 'Jakob'))}>
         Switch Name
       </button>
     </>

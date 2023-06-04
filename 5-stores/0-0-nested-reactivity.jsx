@@ -27,7 +27,8 @@ const App = () => {
             if (!input.value.trim()) return;
             addTodo(input.value);
             input.value = '';
-          }}>
+          }}
+        >
           Add Todo
         </button>
       </div>
@@ -37,15 +38,12 @@ const App = () => {
           console.log(`Creating ${text}`);
           return (
             <div>
-              <input
-                type="checkbox"
-                checked={todo.completed()}
-                onchange={[toggleTodo, id]}
-              />
+              <input type="checkbox" checked={todo.completed()} onchange={[toggleTodo, id]} />
               <span
                 style={{
                   'text-decoration': todo.completed() ? 'line-through' : 'none',
-                }}>
+                }}
+              >
                 {text}
               </span>
             </div>

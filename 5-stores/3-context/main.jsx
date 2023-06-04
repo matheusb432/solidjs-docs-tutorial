@@ -17,5 +17,5 @@ render(
       <App />
     </CounterProvider>
   ),
-  document.getElementById('app')
+  document.getElementById('app'),
 );

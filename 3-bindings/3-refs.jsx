@@ -1,8 +1,6 @@
 import { render } from 'solid-js/web';
 import { onMount, onCleanup } from 'solid-js';
 
-import './style.css';
-
 function App() {
   let canvas;
   onMount(() => {

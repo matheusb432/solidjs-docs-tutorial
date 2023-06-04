@@ -38,8 +38,6 @@ function App() {
   return <Canvas ref={canvas} />;
 }
 
-import './style.css';
-
 export default function Canvas(props) {
   // NOTE setting a forward ref
   return <canvas ref={props.ref} width="256" height="256" />;

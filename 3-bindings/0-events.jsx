@@ -1,8 +1,6 @@
 import { render } from 'solid-js/web';
 import { createSignal } from 'solid-js';
 
-import './style.css';
-
 function App() {
   const [pos, setPos] = createSignal({ x: 0, y: 0 });
 

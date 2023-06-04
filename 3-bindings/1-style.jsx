@@ -12,7 +12,8 @@ function App() {
         color: `rgb(${num()}, 180, ${num()})`,
         'font-weight': 800,
         'font-size': `${num()}px`,
-      }}>
+      }}
+    >
       Some Text
     </div>
   );

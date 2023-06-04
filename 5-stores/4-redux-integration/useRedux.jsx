@@ -4,9 +4,7 @@ import { createStore, reconcile } from 'solid-js/store';
 // NOTE Redux store integration hook
 export default function useRedux(store, actions) {
   const [state, setState] = createStore(store.getState());
-  const unsubscribe = store.subscribe(() =>
-    setState(reconcile(store.getState()))
-  );
+  const unsubscribe = store.subscribe(() => setState(reconcile(store.getState())));
   onCleanup(() => unsubscribe());
   return [state, mapActions(store, actions)];
 }

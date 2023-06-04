@@ -13,9 +13,7 @@ function App() {
   return (
     <>
       <ColoredList color={color()}>
-        <For each={['Most', 'Interesting', 'Thing']}>
-          {(item) => <div>{item}</div>}
-        </For>
+        <For each={['Most', 'Interesting', 'Thing']}>{(item) => <div>{item}</div>}</For>
       </ColoredList>
       <button onClick={() => setColor('teal')}>Set Color</button>
     </>

@@ -16,12 +16,8 @@ function App() {
 
   return (
     <>
-      <select
-        value={selected()}
-        onInput={(e) => setSelected(e.currentTarget.value)}>
-        <For each={Object.keys(options)}>
-          {(color) => <option value={color}>{color}</option>}
-        </For>
+      <select value={selected()} onInput={(e) => setSelected(e.currentTarget.value)}>
+        <For each={Object.keys(options)}>{(color) => <option value={color}>{color}</option>}</For>
       </select>
       {/* NOTE <Dynamic /> accepts a component function or a string for a native element */}
       <Dynamic component={options[selected()]} />

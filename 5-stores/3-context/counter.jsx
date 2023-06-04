@@ -17,11 +17,7 @@ export function CounterProvider(props) {
     },
   ];
 
-  return (
-    <CounterContext.Provider value={counter}>
-      {props.children}
-    </CounterContext.Provider>
-  );
+  return <CounterContext.Provider value={counter}>{props.children}</CounterContext.Provider>;
 }
 
 export function useCounter() {

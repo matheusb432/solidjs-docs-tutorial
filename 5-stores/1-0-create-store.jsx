@@ -11,12 +11,6 @@ function createTodosStore() {
     setTodos([...todos, { id: ++todoId, text, completed: false }]);
   };
 
-  // NOTE Equivalent to using nested signals
-  //   const toggleTodo = (id) => {
-  //     const todo = todos().find((t) => t.id === id);
-  //     if (todo) todo.setCompleted(!todo.completed());
-  //   };
-
   const toggleTodo = (id) => {
     // NOTE Store's path syntax with function setters that allow us to take the previous state and return the new state on nested values.
     setTodos(
@@ -25,9 +19,15 @@ function createTodosStore() {
       // NOTE Access the complete property
       'completed',
       // NOTE Toggle the property
-      (completed) => !completed
+      (completed) => !completed,
     );
   };
+
+  // NOTE Equivalent using nested signals
+  //   const toggleTodo = (id) => {
+  //     const todo = todos().find((t) => t.id === id);
+  //     if (todo) todo.setCompleted(!todo.completed());
+  //   };
 
   return { todos, addTodo, toggleTodo };
 }
@@ -45,7 +45,8 @@ const App = () => {
             if (!input.value.trim()) return;
             addTodo(input.value);
             input.value = '';
-          }}>
+          }}
+        >
           Add Todo
         </button>
       </div>
@@ -56,15 +57,12 @@ const App = () => {
           console.log(`Creating ${text}`);
           return (
             <div>
-              <input
-                type="checkbox"
-                checked={todo.completed}
-                onchange={[toggleTodo, id]}
-              />
+              <input type="checkbox" checked={todo.completed} onchange={[toggleTodo, id]} />
               <span
                 style={{
                   'text-decoration': todo.completed ? 'line-through' : 'none',
-                }}>
+                }}
+              >
                 {text}
               </span>
             </div>

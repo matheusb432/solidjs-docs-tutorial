@@ -9,9 +9,7 @@ function App() {
     <>
       <p>Logged In = {loggedIn().toString()}</p>
       {/* // NOTE <Show /> is the conditional control flow */}
-      <Show
-        when={loggedIn()}
-        fallback={<button onClick={toggle}>Log in</button>}>
+      <Show when={loggedIn()} fallback={<button onClick={toggle}>Log in</button>}>
         <button onClick={toggle}>Log out</button>
       </Show>
     </>

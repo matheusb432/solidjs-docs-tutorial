@@ -8,9 +8,7 @@ function App() {
   // NOTE `onMount` is just a `createEffect` call that is non-tracking, which means it never re-runs.
   // NOTE it will run only once, once all initial rendering is done
   onMount(async () => {
-    const res = await fetch(
-      `https://jsonplaceholder.typicode.com/photos?_limit=20`
-    );
+    const res = await fetch(`https://jsonplaceholder.typicode.com/photos?_limit=20`);
     setPhotos(await res.json());
   });
 

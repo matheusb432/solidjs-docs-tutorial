@@ -6,17 +6,14 @@ function createTodosStore() {
   let todoId = 0;
 
   const addTodo = (text) => {
-    setTodos([
-      ...todos,
-      { id: ++todoId, text: text + ' from store!', completed: false },
-    ]);
+    setTodos([...todos, { id: ++todoId, text: text + ' from store!', completed: false }]);
   };
 
   const toggleTodo = (id) => {
     setTodos(
       (todo) => todo.id === id,
       'completed',
-      (completed) => !completed
+      (completed) => !completed,
     );
   };
 
