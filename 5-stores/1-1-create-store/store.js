@@ -1,12 +1,15 @@
 import { createStore } from 'solid-js/store';
+import { createRoot } from 'solid-js';
 
-// NOTE creating the store at the top level so the same state can be used by multiple components
-const [todos, setTodos] = createStore([]);
-let todoId = 0;
+function createTodosStore() {
+  const [todos, setTodos] = createStore([]);
+  let todoId = 0;
 
-export function useTodosStore() {
   const addTodo = (text) => {
-    setTodos([...todos, { id: ++todoId, text, completed: false }]);
+    setTodos([
+      ...todos,
+      { id: ++todoId, text: text + ' from store!', completed: false },
+    ]);
   };
 
   const toggleTodo = (id) => {
@@ -19,3 +22,6 @@ export function useTodosStore() {
 
   return { todos, addTodo, toggleTodo };
 }
+
+// NOTE Exporting the store as a root store so it's state can be accessed from any component
+export const useTodosStore = createRoot(createTodosStore);

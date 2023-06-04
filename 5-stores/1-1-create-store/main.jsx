@@ -4,7 +4,7 @@ import { TodoList } from './TodoList';
 
 const App = () => {
   let input;
-  const { addTodo } = useTodosStore();
+  const { addTodo } = useTodosStore;
 
   function onAddTodo(e) {
     if (!input.value.trim()) return;

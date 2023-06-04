@@ -3,7 +3,7 @@ export { useTodosStore } from './store';
 
 // NOTE Refactoring the For loop into a separate component and calling the store directly
 export const TodoList = () => {
-  const { todos, toggleTodo } = useTodosStore();
+  const { todos, toggleTodo } = useTodosStore;
 
   return (
     <For each={todos}>
